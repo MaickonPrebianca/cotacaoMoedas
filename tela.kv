@@ -1,20 +1,43 @@
-Screen:
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            id: toolbar
-            text: 'Cotação de Moedas'
-        GridLayout:
-            cols: 1
-            Label:
-                id: moeda1
-                text: '1'
-            Label:
-                id: moeda2
-                text: '2'
-            Label:
-                id: moeda3
-                text: '3'
-            Label:
-                id: moeda4
-                text: '4'
+BoxLayout:
+    orientation: 'vertical'
+    BackgroundLabel:
+        font_size: 30
+        text: 'COTAÇÃO DE MOEDAS'
+        background_color: 0, 0, 1, .9
+    Label:
+        id: emBraco
+        text: ''
+    Label:
+        id: moeda1
+        text: '1'
+    Label:
+        id: moeda2
+        #color: 'red' # define a cor da fonte
+        text: '2'
+    Label:
+        id: moeda3
+        text: '3'
+    Label:
+        id: moeda4
+        text: '4'
+    Label:
+        id: dataHoraAtualizado
+        text: 'dd/mm/aaa hh:mm:ss'
+
+
+# Define your background color Template
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+# Now you can simply Mix the `BackgroundColor` class with almost
+# any other widget... to give it a background.
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: 0, 0, 0, 0
+    # Default the background color for this label
+
+
