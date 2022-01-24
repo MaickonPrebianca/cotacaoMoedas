@@ -2,7 +2,6 @@ from kivy.app import App
 from kivy.lang import Builder
 import requests
 
-
 GUI = Builder.load_file("tela.kv")
 
 class CotacaoMoedas(App):
